@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_margin="0dp"
+	android:layout_width="700dp"
+	android:layout_height="wrap_content"
+	android:background="@android:color/transparent"
+	android:id="@+id/layout_parent">
+
+<!-- 	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="110dp"
+		android:background="@android:color/transparent"
+    >
+    </LinearLayout> -->
+	
+	<LinearLayout
+		android:id="@+id/layout_head"
+		android:layout_width="match_parent"
+		android:layout_height="80dp"
+		android:orientation="vertical"
+		android:padding="14dp"
+		android:gravity="center"
+		android:background="@drawable/single_dia_head"
+		>
+
+		<TextView
+		android:id="@+id/title"
+		android:layout_width="match_parent"
+		android:layout_height="34dp"
+		android:layout_gravity="center_horizontal"
+		android:text="@string/enter_password"
+		android:textColor="@color/white"
+		android:gravity="center"
+		android:textSize="24sp" 
+		android:layout_marginTop="20dp"
+		android:layout_marginBottom="10dp" />	
+	</LinearLayout> 
+
+    <LinearLayout
+		android:id="@+id/layout_body"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:paddingLeft="14dp"
+		android:paddingRight="14dp"
+		android:gravity="center"
+		android:background="@drawable/single_dia_body"
+		android:layout_below="@+id/layout_head" >
+    
+		<ListView
+			android:id="@+id/set_list"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="36dp"
+			android:layout_marginRight="36dp" 					     				     
+			android:scrollbars="vertical"
+			android:listSelector="@drawable/list_item_bg"/> 
+
+	</LinearLayout> 
+	<LinearLayout
+		android:id="@+id/layout_tail" 
+		android:layout_width="fill_parent"
+		android:layout_height="95dp"
+		android:orientation="vertical"
+		android:background="@drawable/single_dia_tail"
+		android:layout_alignBottom="@+id/layout_parent"
+		android:layout_below="@+id/layout_body"
+		>
+	     <LinearLayout
+    		android:layout_width="match_parent"
+    		android:layout_height="match_parent"
+    		android:orientation="horizontal"
+    		android:gravity="center"
+    		android:layout_marginBottom="8px">
+		
+    		<ImageView 
+    			android:layout_width="45dp"
+	            android:layout_height="45dp"
+				android:background="@drawable/ok_icon"
+    		>
+    		</ImageView>
+    		<TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center"
+		        android:text="@string/help_info_select"
+		        android:textColor="@color/white"
+		        android:textSize="20sp" 
+		        android:layout_marginRight="30px"
+		        />
+    		
+    		<ImageView 
+    			android:layout_width="45dp"
+	            android:layout_height="45dp"
+
+				android:background="@drawable/return_icon"
+    		></ImageView>
+    		<TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center"
+		        android:text="@string/help_info_return"
+		        android:textColor="@color/white"
+		        android:textSize="20sp" />
+		</LinearLayout>
+	</LinearLayout>	
+<!-- 	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="110dp"
+		android:background="@android:color/transparent"
+    >
+    </LinearLayout> -->
+</LinearLayout>
+

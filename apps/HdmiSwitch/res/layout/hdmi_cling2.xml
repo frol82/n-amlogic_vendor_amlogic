@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (c) 2014 Amlogic, Inc. All rights reserved.
+ *
+ * This source code is subject to the terms and conditions defined in the
+ * file 'LICENSE' which is part of this source code package.
+ *
+-->
+<com.droidlogic.HdmiSwitch.HdmiCling xmlns:android="http://schemas.android.com/apk/res/android" xmlns:hdmicling="http://schemas.android.com/apk/res/com.droidlogic.HdmiSwitch" android:id="@+id/hdmi_cling2" android:layout_width="fill_parent" android:layout_height="fill_parent" hdmicling:drawIdentifier="hdmi_landscape">
+  <!--  android:visibility="gone" -->
+  <!-- launcher:drawIdentifier="workspace_landscape" -->
+  <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="40dp" android:layout_marginTop="40dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+      <TextView style="@style/ClingTitleText" android:id="@+id/hdmi_cling_title2" android:text="@string/hdmi_cling_title" />
+      <TextView style="@style/ClingText" android:id="@+id/hdmi_cling_move_fingers" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/hdmi_cling_move_fingers" />
+      <ImageView android:id="@+id/hdmi_hand2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/hand2" />
+    </LinearLayout>
+  </FrameLayout>
+  <TextView style="@style/ClingText" android:id="@+id/hdmi_cling_move_hands" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginRight="50dp" android:layout_gravity="bottom|center_vertical" android:gravity="right" android:text="@string/hdmi_cling_dismiss" />
+  <Button style="@style/ClingButton" android:id="@+id/cling_dimiss" android:layout_marginBottom="15dp" android:layout_marginRight="10dp" android:layout_gravity="bottom|right" android:onClick="dismissHdmiCling" />
+</com.droidlogic.HdmiSwitch.HdmiCling>

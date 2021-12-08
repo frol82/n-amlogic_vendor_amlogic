@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+ Copyright (c) 2014 Amlogic, Inc. All rights reserved.
+
+ This source code is subject to the terms and conditions defined in the
+ file 'LICENSE' which is part of this source code package.
+
+ Description: manifest
+-->
+
+<resources>
+
+    <string name="app_name">数据完整性保护</string>
+    <string name="confirm">确认</string>
+    <string name="wipe_tip">机器有一个严重错误，需要恢复出厂设置修复，此操作将擦除所有数据</string>
+    <string name="reboot_tip">机器有一个严重错误，需要重启修复</string>
+    <string name="restore_system_tip">机器系统分区损坏，需要重启修复</string>
+
+</resources>

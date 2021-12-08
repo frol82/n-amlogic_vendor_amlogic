@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    >   
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="80px"
+		android:orientation="vertical"
+		android:padding="14px"
+		android:gravity="center"
+		android:background="@drawable/single_dia_head">
+		<TextView
+			android:id="@+id/title"
+			android:layout_width="match_parent"
+			android:layout_height="34px"
+			android:layout_gravity="center_horizontal"
+			android:text="@string/enter_password"
+			android:textColor="@color/white"
+			android:gravity="center"
+			android:textSize="24px" 
+			android:layout_marginTop="20px"
+			android:layout_marginBottom="10px" />	
+	</LinearLayout> 
+
+	<LinearLayout
+    		android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:orientation="horizontal"
+    		android:padding="14px"
+    		android:gravity="center"
+    		android:background="@drawable/single_dia_body">
+		<com.amlogic.widget.FocusScrollListView 
+			android:id="@+id/list_item"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:listSelector="#00000000"
+			android:cacheColorHint="#00000000"
+			android:divider="#0000"
+			android:dividerHeight="0px"
+			android:focusable="true"
+			android:layout_marginLeft="5px"
+			android:layout_marginRight="5px" 			
+		></com.amlogic.widget.FocusScrollListView>	   
+	</LinearLayout> 
+
+	<LinearLayout
+		android:id="@+id/layout_tail" 
+		android:layout_width="fill_parent"
+		android:layout_height="95dp"
+		android:orientation="vertical"
+		android:background="@drawable/single_dia_tail"
+
+		>
+		
+	  	<LinearLayout
+	    		android:layout_width="fill_parent"
+				android:layout_height="60dp"
+				android:layout_marginRight="20px"
+				android:layout_marginLeft="20px"
+				android:layout_marginTop="18dp"
+				android:layout_marginBottom="8px"
+	    		android:orientation="vertical">
+				
+	  	     	<LinearLayout
+		    		android:layout_width="match_parent"
+		    		android:layout_height="match_parent"
+		    		android:orientation="horizontal"
+		    		android:gravity="center"
+		    		android:layout_marginBottom="8px">
+	    		
+		    		<ImageView 
+		    			android:layout_width="45dp"
+		    			android:layout_height="45dp"
+						android:background="@drawable/move"
+		    		>
+		    		</ImageView>
+		    		<TextView
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_gravity="center"
+				        android:text="@string/help_info_move"
+				        android:textColor="@color/white"
+				        android:textSize="20sp" 
+				        android:layout_marginRight="30px"
+				        />
+		    		<ImageView 
+		    			android:layout_width="45dp"
+		    			android:layout_height="45dp"
+						android:background="@drawable/ok_icon"
+		    		></ImageView>
+		    		<TextView
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_gravity="center"
+				        android:text="@string/help_info_select"
+				        android:textColor="@color/white"
+				        android:textSize="20sp"
+				        android:layout_marginRight="30px"
+				        />
+		    		<ImageView 
+		    			android:layout_width="45dp"
+		    			android:layout_height="45dp"
+						android:background="@drawable/return_icon"
+		    		></ImageView>
+		    		<TextView
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_gravity="center"
+				        android:text="@string/help_info_return"
+				        android:textColor="@color/white"
+				        android:textSize="20sp" />
+			</LinearLayout>
+		</LinearLayout>	
+	</LinearLayout>		
+</LinearLayout>
+

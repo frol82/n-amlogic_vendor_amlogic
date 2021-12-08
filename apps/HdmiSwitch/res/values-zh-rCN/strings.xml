@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (c) 2014 Amlogic, Inc. All rights reserved.
+ *
+ * This source code is subject to the terms and conditions defined in the
+ * file 'LICENSE' which is part of this source code package.
+ *
+-->
+<resources>
+  <string name="app_name">HDMI设置</string>
+  <string name="title_text_str">HDMI 输出选择</string>
+  <string name="hdmi_state_str1">HDMI 已连接</string>
+  <string name="hdmi_state_str2">HDMI 未连接</string>
+  <string name="hdmi_info_str1"></string>
+  <string name="hdmi_info_str2"></string>
+  <string name="driver_api_err">HDMI 检测错误:请升级程序</string>
+  <string name="mode_str_panel">LCD屏幕</string>
+  <string name="mode_str_480i">HDMI 480i</string>
+  <string name="mode_str_480p">HDMI 480p</string>
+  <string name="mode_str_576i">HDMI 576i</string>
+  <string name="mode_str_576p">HDMI 576p</string>
+  <string name="mode_str_720p50hz">HDMI 720p-50Hz</string>
+  <string name="mode_str_720p">HDMI 720p-60Hz</string>
+  <string name="mode_str_1080i">HDMI 1080i</string>
+  <string name="mode_str_1080p24hz">HDMI 1080p-24Hz</string>
+  <string name="mode_str_1080p50hz">HDMI 1080p-50Hz</string>
+  <string name="mode_str_1080p">HDMI 1080p-60Hz</string>
+  <string name="Toast_msg_camera_busy">相机程序使用中，请先关闭.</string>
+  <string name="dialog_title">应用该模式?</string>
+  <string name="dialog_str_ok">确认</string>
+  <string name="dialog_str_cancel">取消</string>
+  <!-- HDMI Cling related -->
+  <!-- Cling for the first running -->
+  <string name="Cling_name">Hdmi 操作说明!</string>
+  <!-- The title text -->
+  <string name="hdmi_cling_title">"HDMI 操作说明如下:"</string>
+  <string name="hdmi_cursor">"屏幕上的圆环代表光标，移动光标时请将平板横放!"</string>
+  <!--  The description of the click (touch) operation -->
+  <string name="hdmi_cling_click">"点击平板是一个单击事件."</string>
+  <!-- The description of how to use the single finger move -->
+  <string name="hdmi_cling_move_finger">单指滑动平板屏幕可以移动光标.</string>
+  <!-- The description of how to use the double fingers move -->
+  <string name="hdmi_cling_next">“请将光标移动至此，点击 \"next\" 按钮!\n\n\n"</string>
+  <!-- The description of how to use the double fingers move -->
+  <string name="hdmi_cling_move_fingers">"\n双指滑动平板屏幕是拖拽事件."</string>
+  <string name="hdmi_cling_dismiss">"请点击\"ok\"按钮!\n\n\n"</string>
+  <!-- The text on the button to move next -->
+  <string name="cling_next">next</string>
+  <!-- The text on the button to dismiss a cling  -->
+  <string name="cling_dismiss">OK</string>
+</resources>

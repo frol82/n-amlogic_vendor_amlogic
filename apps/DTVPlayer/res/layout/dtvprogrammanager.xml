@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/RelativeLayoutParent">
+	
+	<LinearLayout 
+		android:id="@+id/RelativeLayoutBG"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="100px" 
+		android:layout_width="800px" 
+		android:layout_height="520px"
+		android:background="@drawable/settings_bg"
+		android:orientation="vertical">  
+    
+	<LinearLayout
+	    android:orientation="vertical"  
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"> 
+	    
+		<LinearLayout
+		    android:orientation="vertical"  
+		    android:layout_height="wrap_content"
+		    android:layout_width="fill_parent"
+		    android:layout_weight="1">   
+		 	<TextView  
+				android:id="@+id/ProgramManagerDescription"
+				android:textSize="24sp"
+				android:paddingLeft = "65px"
+				android:paddingTop = "30px"	
+				android:layout_gravity="center|left"	
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:textColor="@color/white"
+				android:layout_marginBottom="10px"/>  		  
+		</LinearLayout>
+	
+		<LinearLayout
+		    android:orientation="horizontal"  
+		    android:layout_marginLeft="12px"
+		    android:layout_marginRight="20px"
+		    android:layout_marginBottom="10px"
+		    android:layout_height="50px"
+		    android:layout_width="wrap_content">  
+
+		    <HorizontalScrollView 
+				android:id="@+id/horizontalScrollView1" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"> 
+			 	<LinearLayout   
+			 		android:id="@+id/LinearLayoutGroupButton" 
+				    android:orientation="horizontal"
+				    android:layout_width="fill_parent"
+		    		android:layout_height="wrap_content">
+	    		</LinearLayout>
+			</HorizontalScrollView> 	
+		</LinearLayout>
+	</LinearLayout>
+	 
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent"		  
+		android:layout_height="180px"
+		android:layout_weight="1">	
+		<!--
+		<ListView
+			android:id="@+id/list_content"
+			android:layout_marginLeft="4px"
+			android:layout_marginRight="4px"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"	
+			android:scrollbars="vertical"/>    
+		
+		-->
+		<com.amlogic.widget.FocusScrollListView 
+			android:id="@+id/list_content"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:padding="0dip"
+			android:layout_margin="0dip"
+			android:layout_marginLeft="4px"
+			android:layout_marginRight="4px" 
+			android:listSelector="#00000000">
+		</com.amlogic.widget.FocusScrollListView>	
+		
+	</LinearLayout> 
+
+	<LinearLayout
+    		android:layout_width="fill_parent"
+			android:layout_height="50px"
+			android:layout_marginRight="20px"
+			android:layout_marginLeft="20px"
+    		android:orientation="vertical">
+			<RelativeLayout
+				android:id="@+id/inforbar_line" 
+				android:layout_width="fill_parent"
+				android:layout_height="2px"
+				android:background="@drawable/line"
+				>	
+			</RelativeLayout>
+	     
+  	     	<LinearLayout
+	    		android:layout_width="match_parent"
+	    		android:layout_height="match_parent"
+	    		android:orientation="horizontal"
+	    		android:gravity="center"
+	    		android:layout_marginBottom="8px">
+    		
+	    		<ImageView 
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content"
+					android:background="@drawable/move"
+	    		>
+	    		</ImageView>
+	    		<TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="center"
+			        android:text="@string/help_info_move"
+			        android:textColor="@color/white"
+			        android:textSize="20sp" 
+			        android:layout_marginRight="30px"
+			        />
+	    		<ImageView 
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content"
+					android:background="@drawable/enter"
+	    		></ImageView>
+	    		<TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="center"
+			        android:text="@string/help_info_select"
+			        android:textColor="@color/white"
+			        android:textSize="20sp"
+			        android:layout_marginRight="30px"
+			        />
+	    		<ImageView 
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content"
+					android:background="@drawable/return_icon"
+	    		></ImageView>
+	    		<TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="center"
+			        android:text="@string/help_info_return"
+			        android:textColor="@color/white"
+			        android:textSize="20sp" />
+    		</LinearLayout>
+		</LinearLayout>	
+	</LinearLayout>
+</RelativeLayout>

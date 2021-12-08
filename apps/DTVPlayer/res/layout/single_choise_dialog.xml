@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+	android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/layout_parent"
+    > 
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="100dp"
+		android:layout_alignTop="@+id/layout_parent"
+    >
+   </LinearLayout>
+   <LinearLayout
+   		android:id="@+id/layout_head"
+		android:layout_width="match_parent"
+		android:layout_height="90dp"
+		android:orientation="vertical"
+		android:padding="14dp"
+		android:gravity="center"
+		android:background="@drawable/single_dia_head"
+		>
+		
+		<TextView
+			android:id="@+id/title"
+			android:layout_width="match_parent"
+			android:layout_height="34dp"
+			android:layout_gravity="center_horizontal"
+			android:text="@string/enter_password"
+			android:textColor="@color/white"
+			android:gravity="center"
+			android:textSize="24sp" 
+			android:layout_marginTop="20dp"
+			android:layout_marginBottom="10dp" />	
+	</LinearLayout> 
+
+	
+
+		<LinearLayout
+			android:id="@+id/layout_body"
+    		android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:paddingLeft="50dp"
+    		android:paddingRight="50dp"
+    		android:textColor="@color/white"
+    		android:background="@drawable/single_dia_body"
+    		android:layout_above="@+id/layout_tail" 
+    		android:layout_below="@+id/layout_head" >
+
+    		<LinearLayout
+    			android:layout_width="match_parent"
+    			android:layout_height="match_parent">
+			<!--
+			<ListView 
+				android:id="@+id/list_item"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:cacheColorHint="#00000000"
+				android:divider="#0000"
+				android:dividerHeight="0px"
+				android:focusable="true"
+				android:layout_marginLeft="30px"
+				android:layout_marginRight="30px" 			
+			></ListView>   
+			-->
+			
+			<com.amlogic.widget.FocusScrollListView 
+				android:id="@+id/list_item"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:listSelector="#00000000"
+				android:textColor="@color/white">
+			</com.amlogic.widget.FocusScrollListView>
+		</LinearLayout> 
+	</LinearLayout> 
+	
+	<LinearLayout
+		android:id="@+id/layout_tail" 
+		android:layout_width="fill_parent"
+		android:layout_height="90dp"
+		android:orientation="vertical"
+		android:background="@drawable/single_dia_tail"
+		
+		>
+		
+	    <LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:paddingLeft="60dp"
+    		android:paddingRight="60dp"
+    		android:paddingTop="25dp"
+			android:gravity="center">
+			
+			<Button android:id="@+id/no"
+			   android:layout_width="wrap_content"
+	           android:layout_height="45dp"
+	       	   android:background="@drawable/single_dia_button"
+	       	   android:layout_weight="1"
+	           />
+	           
+			<Button android:id="@+id/yes"
+			   android:layout_width="wrap_content"
+	           android:layout_height="45dp"
+	       	   android:background="@drawable/single_dia_button"
+	       	   android:layout_weight="1"
+	       	   android:layout_marginLeft="60dp"
+	           />
+		</LinearLayout>
+	</LinearLayout>	
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="100dp"
+		android:layout_alignBottom="@+id/layout_parent"
+    >
+    </LinearLayout>
+</LinearLayout>
+
+

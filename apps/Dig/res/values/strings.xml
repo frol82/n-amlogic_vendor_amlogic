@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+ Copyright (c) 2014 Amlogic, Inc. All rights reserved.
+
+ This source code is subject to the terms and conditions defined in the
+ file 'LICENSE' which is part of this source code package.
+
+ Description: manifest
+-->
+
+<resources>
+
+    <string name="app_name">Data Integrity Guard</string>
+    <string name="confirm">Confirm</string>
+    <string name="wipe_tip">The machine has a serious error, need to restore factory to repair,this action will clean the user data</string>
+    <string name="reboot_tip">The machine has a serious error, need reboot to repair</string>
+    <string name="restore_system_tip">The machine system partition is damaged, need reboot to repair</string>
+
+</resources>

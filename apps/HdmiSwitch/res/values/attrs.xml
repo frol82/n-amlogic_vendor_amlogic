@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (c) 2014 Amlogic, Inc. All rights reserved.
+ *
+ * This source code is subject to the terms and conditions defined in the
+ * file 'LICENSE' which is part of this source code package.
+ *
+-->
+<resources>
+  <!-- Cling specific attributes. These attributes are used to customize
+         the cling in XML files. -->
+  <declare-styleable name="Cling">
+    <!-- Used to identify how to draw the cling bg -->
+    <attr name="drawIdentifier" format="string" />
+  </declare-styleable>
+</resources>

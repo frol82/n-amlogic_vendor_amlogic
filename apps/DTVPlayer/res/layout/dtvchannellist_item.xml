@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout    
+		android:layout_width="fill_parent"    
+		xmlns:android="http://schemas.android.com/apk/res/android"    
+		android:orientation="horizontal"  
+		android:layout_height="42dp"       
+		android:paddingLeft="10px"
+		android:gravity="center_vertical"
+		android:minHeight="50dip"
+		>
+	<TextView       
+		android:id="@+id/prono"
+		android:gravity="left|center_vertical"
+		android:paddingRight="30px"
+		android:layout_width="120px"
+		android:layout_height="42px" 
+		android:textSize="20sp"
+		android:layout_marginLeft="40px"
+		android:singleLine="true" 
+		android:textColor="@color/white"
+		android:ellipsize="marquee">  
+	</TextView>  
+
+	<TextView       
+		android:id="@+id/ItemText"
+		android:gravity="left|center_vertical"
+		android:layout_width="320px"
+		android:layout_height="42px" 
+		android:textSize="20sp"
+		android:layout_marginLeft="10px"
+		android:singleLine="true" 
+		android:textColor="@color/white"
+		android:ellipsize="marquee">  
+	</TextView>  
+   
+	<ImageView android:id="@+id/icon_scrambled"
+		android:layout_width="30px"
+		android:layout_height="30px"
+		android:gravity="center"/>
+	<ImageView android:id="@+id/icon_fav"
+		android:layout_width="30px"
+		android:layout_height="30px"
+		android:gravity="center"/>		 	 
+	<ImageView android:id="@+id/icon"
+		android:layout_width="30px"
+		android:layout_height="30px"
+		android:gravity="center"
+		android:layout_marginRight="40px"/>
+
+</LinearLayout>  

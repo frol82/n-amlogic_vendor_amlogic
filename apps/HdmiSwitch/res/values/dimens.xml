@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (c) 2014 Amlogic, Inc. All rights reserved.
+ *
+ * This source code is subject to the terms and conditions defined in the
+ * file 'LICENSE' which is part of this source code package.
+ *
+-->
+<resources>
+  <!-- Cling -->
+  <dimen name="clingPunchThroughGraphicCenterRadius">94dp</dimen>
+  <dimen name="folderClingMarginTop">20dp</dimen>
+  <!-- The offset for the text in the cling -->
+  <dimen name="cling_text_block_offset_x">0dp</dimen>
+  <dimen name="cling_text_block_offset_y">0dp</dimen>
+  <!-- height of the bottom row of controls -->
+  <dimen name="button_bar_height">62dip</dimen>
+  <dimen name="app_icon_size">48dp</dimen>
+</resources>

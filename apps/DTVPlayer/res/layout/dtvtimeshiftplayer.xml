@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout_video"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/transparent"
+    android:foreground="@color/transparent">
+	
+	<RelativeLayout android:id="@+id/RelativeLayoutRadioBg"
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent"
+		android:gravity="center"
+		android:visibility="invisible"
+		>
+		<ImageView android:layout_width="fill_parent" 
+			android:layout_height="fill_parent"
+			android:id="@+id/ImageViewRadioBg"
+			android:src="@drawable/dtvplayer_radio_bg"/>		
+	</RelativeLayout>	
+   
+	<RelativeLayout android:id="@+id/RelativeLayoutTimeshiftIcon"
+			android:layout_width="48dp" android:layout_height="48dp"
+			android:layout_alignParentTop="true"
+			android:layout_marginTop="8dp"
+			android:layout_alignParentRight="true"
+			android:layout_marginRight="230dp"
+			android:gravity="center"
+			android:visibility="invisible"
+			android:background="@drawable/dtvplayer_pvr_icon_bg"
+			>
+			<ImageView android:layout_width="fill_parent" 
+    					android:layout_height="fill_parent"
+						android:id="@+id/ImageViewTimeshiftIcon" 
+						android:src="@drawable/timeshifting_icon"
+						android:layout_alignParentLeft="true"
+						android:visibility="invisible"
+						android:padding="4dp"
+						>
+			</ImageView>
+	</RelativeLayout>
+
+
+	<!--inforbar-->
+	<RelativeLayout android:id="@+id/RelativeLayoutInforbar"
+		android:layout_alignParentBottom="true"
+		android:layout_width="fill_parent"
+		android:layout_marginLeft="30dp"
+		android:layout_marginRight="30dp"
+		android:layout_marginBottom="10dp"
+		android:background="@drawable/dtvplayer_bar_bg" 
+		android:layout_height="150dp"
+		android:paddingBottom="0dp"
+		android:visibility="invisible">
+
+		<RelativeLayout android:id="@+id/RelativeLayoutNextprogram" 
+			android:layout_height="26dp" 
+			android:layout_marginRight="5dp" 
+			android:layout_width="fill_parent" 
+			android:layout_marginLeft="5dp"
+			android:layout_alignParentBottom="true"
+			android:layout_marginBottom="6dp">
+			<TextView 
+			      android:id="@+id/Text_nextevent"
+			      android:layout_width="fill_parent"
+			      android:layout_height="26dp"
+			      android:layout_below="@+id/Text_curevent"
+			      android:textSize="20dp"
+			      android:textColor="@color/white"
+			      android:paddingLeft="33dp"
+			      >
+			</TextView>
+		</RelativeLayout>
+	
+		<RelativeLayout 
+			android:id="@+id/RelativeLayoutNoAndName" 
+			android:layout_width="400dp" 
+			android:layout_height="100dp" 
+			android:layout_marginTop="7dp"
+			android:layout_marginRight="5dp" 
+			android:layout_marginLeft="15dp"
+			android:background="@drawable/dtvplayer_inforbar_bg_in">
+			<LinearLayout
+				android:id="@+id/LinearLayoutNoAndName" 
+				android:orientation="horizontal"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				> 
+				<LinearLayout    
+				   android:layout_width="wrap_content"    
+				   android:layout_height="wrap_content">
+				    <ImageView android:id="@+id/ImageView_icon_scrambled"
+						android:layout_width="26dp"
+						android:layout_height="26dp"
+						android:layout_gravity="center"
+						android:background="@drawable/dtvplayer_icon_scrambled" 
+						android:visibility="invisible"/>
+				    <ImageView android:id="@+id/ImageView_icon_fav"
+						android:layout_width="26dp"
+						android:layout_height="26dp"
+						android:layout_gravity="center"
+						android:background="@drawable/dtvplayer_icon_fav" 
+						android:visibility="invisible"/>
+				   <ImageView android:id="@+id/ImageView_icon_lock"
+						android:layout_width="26dp"
+						android:layout_height="26dp"
+						android:layout_gravity="center"
+						android:background="@drawable/dtvplayer_icon_lock" 
+						android:visibility="invisible"/>
+				</LinearLayout>  
+
+				<LinearLayout    
+					android:layout_width="wrap_content"    
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="30dp"
+					>
+					<ImageView android:id="@+id/ImageView_icon_epg"
+						android:layout_width="50dp"
+						android:layout_height="26dp"
+						android:layout_gravity="center"
+						android:background="@drawable/dtvplayer_icon_epg" 
+						android:visibility="gone"/>
+					<ImageView android:id="@+id/ImageView_icon_sub"
+						android:layout_width="50dp"
+						android:layout_height="26dp"
+						android:layout_gravity="center"
+						android:background="@drawable/dtvplayer_icon_sub" 
+						android:visibility="gone"/>
+					<ImageView android:id="@+id/ImageView_icon_txt"
+						android:layout_width="50dp"
+						android:layout_height="26dp"
+						android:layout_gravity="center"
+						android:background="@drawable/dtvplayer_icon_txt" 
+						android:visibility="gone"/>
+				</LinearLayout>  
+						
+				<TextView 
+					android:id="@+id/Text_channel_type"
+					android:layout_width="wrap_content"
+					android:layout_height="40dp"
+					android:textSize="19dp" 
+					android:padding="7dp"
+					android:shadowColor="@android:color/white"
+					android:gravity="center"
+					android:visibility="gone"
+					>
+				</TextView>
+			</LinearLayout>
+			
+			<TextView 
+				android:id="@+id/Text_proname"
+				android:layout_width="fill_parent"
+				android:layout_height="46dp"
+				android:paddingLeft="30dp"
+				android:paddingRight="30dp"
+				android:textSize="36sp"
+				android:layout_below="@+id/LinearLayoutNoAndName"
+				android:gravity="left"
+				android:shadowColor="@android:color/white"
+				>
+			</TextView>
+		</RelativeLayout>
+			
+		<RelativeLayout android:id="@+id/RelativeLayoutCurrentEvent"
+			android:layout_toRightOf="@+id/RelativeLayoutNoAndName"
+			android:layout_width="594dp" 
+			android:layout_height="100dp" 
+			android:layout_marginRight="45dp" 
+			android:layout_marginTop="8dp"
+			>
+			<LinearLayout android:id="@+id/LinearLayout02"
+			 android:layout_height="wrap_content"
+			 android:layout_above="@+id/PlayBtn" 
+			 android:layout_marginLeft="15dp" 
+			 android:layout_marginTop="5dp"
+			 android:layout_width="fill_parent">
+				<TextView android:id="@+id/TextView03"
+				 android:layout_width="wrap_content" 
+				 android:layout_height="wrap_content" 
+				 android:layout_gravity="center_vertical" 
+				 android:text="@string/dtvplayer_str_time_null" 
+				 android:layout_weight="1"
+				 android:textSize="22dp"
+				 android:textColor="@color/white"
+				 android:layout_marginLeft="10dp">
+				</TextView>
+				<SeekBar android:id="@+id/SeekBar02"
+				 android:layout_height="wrap_content" 
+				 android:layout_width="wrap_content" 
+				 android:layout_weight="25"
+				 android:focusable="false">
+				</SeekBar>
+				<TextView android:id="@+id/TextView04"
+				 android:layout_width="wrap_content" 
+				 android:layout_height="wrap_content" 
+				 android:text="@string/dtvplayer_str_time_null" 
+				 android:layout_gravity="center_vertical" 
+				 android:layout_weight="1" 
+				 android:textSize="22dp"
+				 android:textColor="@color/white"
+				 android:layout_marginRight="15dp" 
+				 android:layout_marginLeft="10dp">
+				 </TextView>
+			</LinearLayout>		
+			<LinearLayout android:id="@+id/LinearLayout01"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content" 
+				android:layout_centerHorizontal ="true"
+				android:layout_below="@+id/LinearLayout02">
+				 <ImageButton android:layout_width="wrap_content"
+				  android:layout_height="wrap_content" 
+				  android:id="@+id/FastReverse" 
+				  android:background="@drawable/reverse_button" 
+				  android:layout_below="@+id/LinearLayout02" 
+				  android:layout_marginLeft="10dp">
+				 </ImageButton>
+				 <ImageButton android:layout_height="wrap_content" 
+				  android:layout_width="wrap_content" 
+				  android:id="@+id/PlayBtn" 
+				  android:background="@drawable/play_button">
+				 </ImageButton>
+				 <ImageButton android:layout_width="wrap_content"
+				  android:layout_height="wrap_content" 
+				  android:id="@+id/FastForward" 
+				  android:background="@drawable/forward_button" 
+				  android:layout_below="@+id/LinearLayout02" 
+				  android:layout_toRightOf="@+id/PlayBtn">
+				 </ImageButton>
+				 <ImageButton android:layout_width="wrap_content"
+				  android:layout_height="wrap_content" 
+				  android:id="@+id/moreBtn" 
+				  android:background="@drawable/more_button" 
+				  android:layout_toRightOf="@+id/FastForward" 
+				  android:layout_below="@+id/LinearLayout02">
+				 </ImageButton>
+	 		</LinearLayout>
+		</RelativeLayout>
+			
+		<RelativeLayout
+			android:layout_toRightOf="@+id/RelativeLayoutCurrentEvent"			
+			android:layout_height="100dp"
+			android:layout_width="200dp"
+			android:layout_marginRight="16dp"
+			android:layout_marginTop="10dp"
+			>
+			<TextView 
+				android:id="@+id/Text_MTS_info" 
+				android:background="@drawable/dtvplayer_infobar_text_bg"
+				android:layout_alignParentTop="true" 
+				android:layout_width="96dp" 
+				android:layout_height="31dp"
+				android:layout_alignParentLeft="true"
+				android:textColor="@android:color/white"
+				android:textSize="22sp"
+				android:gravity="center"
+
+				>
+			</TextView>
+			<TextView
+				android:id="@+id/Text_screentype_info" 
+				android:background="@drawable/dtvplayer_infobar_text_bg"
+				android:layout_width="96dp" 
+				android:layout_height="31dp"
+				android:layout_alignParentLeft="true"
+				android:textColor="@android:color/white"
+				android:textSize="22sp"
+				android:gravity="center"
+				android:layout_below="@+id/Text_MTS_info">
+			</TextView>
+
+			<TextView 
+					android:id="@+id/Text_parent_control_info_icon" 
+					android:background="@drawable/dtvplayer_infobar_text_bg"
+					android:layout_width="96dp" 
+					android:layout_height="31dp"
+					android:layout_alignParentLeft="true"
+					android:textColor="@android:color/white"
+					android:textSize="22sp"
+					android:gravity="center"
+					android:layout_below="@+id/Text_screentype_info">
+			</TextView>
+		</RelativeLayout>
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:orientation="horizontal"
+		android:id="@+id/bufferLayout" 
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content"
+  		android:layout_gravity="center"
+  		android:gravity="center"
+  		android:background="@android:color/transparent"
+  		android:layout_centerInParent="true"
+  		>
+		<ProgressBar
+			android:id="@+id/ProgressBarLoad" 
+			android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content" 
+		/>
+		<TextView  
+		    android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content" 
+		    android:text="@string/dtvplayer_loading"
+		    android:textColor="@color/white"
+		    android:layout_below="@+id/ProgressBarLoad"
+	    />
+	</RelativeLayout>
+	
+</RelativeLayout>

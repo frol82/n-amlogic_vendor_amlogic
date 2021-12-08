@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >  
+
+	<LinearLayout 
+		android:layout_width="748px"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"  
+		android:orientation="vertical"> 
+		
+		<LinearLayout
+   		android:id="@+id/layout_head"
+		android:layout_width="match_parent"
+		android:layout_height="90dp"
+		android:orientation="vertical"
+		android:padding="14dp"
+		android:gravity="center"
+		android:background="@drawable/single_dia_head"
+		android:layout_alignTop="@+id/layout_parent"
+		>
+		
+		<TextView
+			android:id="@+id/title"
+			android:layout_width="match_parent"
+			android:layout_height="34dp"
+			android:layout_gravity="center_horizontal"
+			android:text="@string/parent_control_Canada_French"
+			android:textColor="@color/white"
+			android:gravity="center"
+			android:textSize="24sp" 
+			android:layout_marginTop="20dp"
+			android:layout_marginBottom="10dp" />	
+		</LinearLayout> 
+
+		<LinearLayout
+			android:id="@+id/layout_body"
+	    		android:layout_width="match_parent"
+	    		android:layout_height="wrap_content"
+	    		android:orientation="horizontal"
+	    		android:paddingLeft="14dp"
+	    		android:paddingRight="14dp"
+	    		android:gravity="center"
+	    		android:background="@drawable/single_dia_body"
+	    		android:layout_above="@+id/layout_tail" 
+	    		android:layout_below="@+id/layout_head" >
+	    
+			<RelativeLayout
+				android:layout_width="422px"
+				android:layout_height="195px"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="70dp"
+				android:background="@drawable/cf"
+				android:id="@+id/rating_bg_layout"
+			>
+				<RelativeLayout
+					android:layout_width="223px"
+					android:layout_height="190px"
+					android:id="@+id/rating_set_layout" 
+					android:layout_centerVertical="true"
+					android:layout_marginLeft="248px"
+					>
+
+					<!--
+					<ListView
+						android:id="@+id/list_mpaa"  
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:layout_gravity="center"
+						android:cacheColorHint="#00000000"
+						android:divider="#0000"
+						android:dividerHeight="0px"
+						android:focusable="true"
+						android:listSelector="@drawable/rating_selected"
+					/>
+					-->
+					<com.amlogic.widget.FocusScrollListView 
+					    android:id="@+id/list_mpaa"
+					    android:layout_width="match_parent"
+					    android:layout_height="match_parent"
+					    android:layout_gravity="center"
+					    android:cacheColorHint="#00000000"
+					    android:divider="#0000"
+					    android:dividerHeight="0px"
+					    android:padding="0dip"
+					    android:layout_margin="0dip"
+					    android:listSelector="#00000000">
+					</com.amlogic.widget.FocusScrollListView>	
+  				</RelativeLayout>	
+  			</RelativeLayout>
+			<RelativeLayout
+				android:layout_width="93px"
+				android:layout_height="52px"
+				android:background="@drawable/vchip_help"
+				android:layout_marginLeft="23px"
+				android:layout_alignTop="@+id/rating_bg_layout"
+				>	
+			</RelativeLayout>
+		  	
+		</LinearLayout>  	  	
+
+		<LinearLayout
+			android:id="@+id/layout_tail" 
+			android:layout_width="fill_parent"
+			android:layout_height="90dp"
+			android:orientation="vertical"
+			android:background="@drawable/single_dia_tail"
+			android:layout_alignBottom="@+id/layout_parent"
+			>	     
+	  	     	<LinearLayout
+	    		android:layout_width="match_parent"
+	    		android:layout_height="match_parent"
+	    		android:orientation="horizontal"
+	    		android:gravity="center">
+	    		
+		    		<ImageView 
+		    			android:layout_width="wrap_content"
+		    			android:layout_height="wrap_content"
+						android:background="@drawable/move"
+		    		>
+		    		</ImageView>
+		    		<TextView
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_gravity="center"
+				        android:text="@string/help_info_move"
+				        android:textColor="@color/white"
+				        android:textSize="20sp" 
+				        android:layout_marginRight="22px"
+				        />
+		    		<ImageView 
+		    			android:layout_width="wrap_content"
+		    			android:layout_height="wrap_content"
+						android:background="@drawable/enter"
+		    		></ImageView>
+		    		<TextView
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_gravity="center"
+				        android:text="@string/help_info_select"
+				        android:textColor="@color/white"
+				        android:textSize="20sp"
+				        android:layout_marginRight="22px"
+				        />
+		    		<ImageView 
+		    		       android:id="@+id/return_icon"
+		    			android:layout_width="wrap_content"
+		    			android:layout_height="wrap_content"
+						android:background="@drawable/return_icon"
+		    		></ImageView>
+		    		<TextView
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_gravity="center"
+				        android:text="@string/help_info_return"
+				        android:textColor="@color/white"
+				        android:textSize="20sp" />
+			</LinearLayout>	
+		</LinearLayout>
+	</LinearLayout>
+
+</RelativeLayout>
+
+

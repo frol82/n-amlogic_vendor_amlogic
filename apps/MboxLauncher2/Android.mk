@@ -1,0 +1,22 @@
+# Copyright (c) 2014 Amlogic, Inc. All rights reserved.
+#
+# This source code is subject to the terms and conditions defined in the
+# file 'LICENSE' which is part of this source code package.
+#
+# Description: makefile
+
+LOCAL_PATH:= $(call my-dir)
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_TAGS := optional
+
+LOCAL_SRC_FILES := $(call all-java-files-under, src)
+LOCAL_JAVA_LIBRARIES := droidlogic droidlogic-tv
+
+LOCAL_PACKAGE_NAME := MboxLauncher
+
+LOCAL_PROGUARD_ENABLED := full
+LOCAL_PROGUARD_FLAG_FILES := proguard.flags
+LOCAL_CERTIFICATE := platform
+
+include $(BUILD_PACKAGE)

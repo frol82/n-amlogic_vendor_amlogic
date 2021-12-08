@@ -1,0 +1,109 @@
+FIRSTBOOTCODESIZE = $(shell echo `stat -c %s first_boot_code.bin`)
+FIRSTBOOTDATASIZE = $(shell echo `stat -c %s first_boot_data.bin`)
+BOOTCODESIZE = $(shell echo `stat -c %s second_boot_code.bin`)
+BOOTDATASIZE = $(shell echo `stat -c %s second_boot_data.bin`)
+SUSPENDCODESIZE = $(shell echo `stat -c %s suspend_code.bin`)
+SUSPENDDATASIZE = $(shell echo `stat -c %s suspend_data.bin`)
+UPDATECODESIZE = $(shell echo `stat -c %s update_code.bin`)
+UPDATEDATASIZE = $(shell echo `stat -c %s update_data.bin`)
+
+FIRSTBOOTCODEPADSIZE = 16384
+FIRSTBOOTDATAPADSIZE = 4096
+BOOTCODEPADSIZE = 38912
+BOOTDATAPADSIZE = 6144
+SUSPENDCODEPADSIZE = 20480
+SUSPENDDATAPADSIZE = 4096
+UPDATECODEPADSIZE = 98304
+UPDATEDATAPADSIZE = 24576
+
+FIRSTBOOTCODEPADDING = $(shell echo ${FIRSTBOOTCODEPADSIZE}-${FIRSTBOOTCODESIZE} | bc)
+FIRSTBOOTDATAPADDING = $(shell echo ${FIRSTBOOTDATAPADSIZE}-${FIRSTBOOTDATASIZE} | bc)
+BOOTCODEPADDING = $(shell echo ${BOOTCODEPADSIZE}-${BOOTCODESIZE} | bc)
+BOOTDATAPADDING = $(shell echo ${BOOTDATAPADSIZE}-${BOOTDATASIZE} | bc)
+SUSPENDCODEPADDING = $(shell echo ${SUSPENDCODEPADSIZE}-${SUSPENDCODESIZE} | bc)
+SUSPENDDATAPADDING = $(shell echo ${SUSPENDDATAPADSIZE}-${SUSPENDDATASIZE} | bc)
+UPDATECODEPADDING = $(shell echo ${UPDATECODEPADSIZE}-${UPDATECODESIZE} | bc)
+UPDATEDATAPADDING = $(shell echo ${UPDATEDATAPADSIZE}-${UPDATEDATASIZE} | bc)
+
+compare = $(shell if [ $(1) -gt $(2) ] ; then echo gt ; else echo le ; fi)
+
+all : first_boot second_boot suspend update
+	cat first_boot.bin > boot.bin
+	
+	cat second_boot.bin >> boot.bin
+	cat suspend.bin >> boot.bin
+	cat update.bin >> boot.bin
+	bin2hex boot.bin 1 > boot.hex
+	
+clean:
+	@rm -f *boot.bin
+	@rm -f *boot.hex
+	@rm -f update*.bin
+	@rm -f update.hex
+	@rm -f suspend*.bin
+	@rm -f suspend.hex
+
+first_boot: $(FIRST_OBJS) $(FIRST_LIB_OBJS)
+	@echo "first boot code size = $(FIRSTBOOTCODESIZE)"
+	@echo "first boot data size = $(FIRSTBOOTDATASIZE)"
+ifeq ("$(call compare,$(FIRSTBOOTCODESIZE),$(FIRSTBOOTCODEPADSIZE))", "gt")
+	@echo "Error! code size > $(FIRSTBOOTCODEPADSIZE)!"
+	exit 1
+endif
+	head -c $(FIRSTBOOTCODEPADDING) /dev/zero >> first_boot_code.bin
+ifeq ("$(call compare,$(FIRSTBOOTDATASIZE),$(FIRSTBOOTDATAPADSIZE))", "gt")
+	@echo "Error! data size > $(FIRSTBOOTDATAPADSIZE)!"
+	exit 1
+endif
+	head -c $(FIRSTBOOTDATAPADDING) /dev/zero >> first_boot_data.bin
+	cat first_boot_code.bin first_boot_data.bin >> first_boot.bin
+	bin2hex first_boot.bin 1 > first_boot_orign.hex
+	
+second_boot: $(OBJS) $(LIB_OBJS)
+	@echo "second boot code size = $(BOOTCODESIZE)"
+	@echo "second boot data size = $(BOOTDATASIZE)"
+ifeq ("$(call compare,$(BOOTCODESIZE),$(BOOTCODEPADSIZE))", "gt")
+	@echo "Error! code size > $(BOOTCODEPADSIZE)!"
+	exit 1
+endif
+	head -c $(BOOTCODEPADDING) /dev/zero >> second_boot_code.bin
+ifeq ("$(call compare,$(BOOTDATASIZE),$(BOOTDATAPADSIZE))", "gt")
+	@echo "Error! data size > $(BOOTDATAPADSIZE)!"
+	exit 1
+endif
+	head -c $(BOOTDATAPADDING) /dev/zero >> second_boot_data.bin
+	cat second_boot_code.bin second_boot_data.bin > second_boot.bin
+	bin2hex second_boot.bin 1 > second_boot.hex
+	
+suspend: $(SUS_OBJS) $(SUS_LIB_OBJS)
+	@echo "suspend code size = $(SUSPENDCODESIZE)"
+	@echo "suspend data size = $(SUSPENDDATASIZE)"
+ifeq ("$(call compare,$(SUSPENDCODESIZE),$(SUSPENDCODEPADSIZE))", "gt")
+	@echo "Error! code size > $(SUSPENDCODEPADSIZE)!"
+	exit 1
+endif
+	head -c $(SUSPENDCODEPADDING) /dev/zero >> suspend_code.bin
+ifeq ("$(call compare,$(SUSPENDDATASIZE),$(SUSPENDDATAPADSIZE))", "gt")
+	@echo "Error! data size > $(SUSPENDDATAPADSIZE)!"
+	exit 1
+endif
+	head -c $(SUSPENDDATAPADDING) /dev/zero >> suspend_data.bin
+	cat suspend_code.bin suspend_data.bin >> suspend.bin
+	bin2hex suspend.bin 1 > suspend_orign.hex
+	
+update: $(UOBJS) $(LIB_OBJS) 
+	@echo "update code size = $(UPDATECODESIZE)"
+	@echo "update data size = $(UPDATEDATASIZE)"
+ifeq ("$(call compare,$(UPDATECODESIZE),$(UPDATECODEPADSIZE))", "gt")
+	@echo "Error! update code size > $(UPDATECODESIZE)!"
+	exit 1
+endif
+	head -c $(UPDATECODEPADDING) /dev/zero >> update_code.bin
+ifeq ("$(call compare,$(UPDATEDATASIZE),$(UPDATEDATAPADSIZE))", "gt")
+	@echo "Error! update data size > $(UPDATEDATAPADSIZE)!"
+	exit 1
+endif
+	head -c $(UPDATEDATAPADDING) /dev/zero >> update_data.bin
+	cat update_code.bin update_data.bin >> update.bin
+	bin2hex update.bin 1 > update.hex
+	
